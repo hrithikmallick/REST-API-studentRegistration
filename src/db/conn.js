@@ -1,0 +1,15 @@
+// connection to the server
+const mongoose = require("mongoose");
+mongoose
+  .connect("mongodb://localhost:27017/studentregistration", {
+    useCreateIndex: true,
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => {
+    console.log("db connect and server is ready to use");
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+// here mongoose return  promises
